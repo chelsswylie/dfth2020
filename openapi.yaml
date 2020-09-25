@@ -1,0 +1,28 @@
+openapi: 3.0.0
+servers:
+  - url: http://localhost:8080/api
+info:
+  description: Detroit Fasion and Tech Hackathon
+  version: 1.0.0
+  title: DFTH 2020
+paths:
+  /hello/world:
+    get:
+      responses:
+        '200':
+          description: Retieve Hello World object.
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/HelloWorld'
+      tags:
+        - Hello World
+components:
+  schemas:
+    HelloWorld:
+      type: object
+      required:
+        - hello
+      properties:
+        hello:
+          type: string

@@ -1,0 +1,52 @@
+def npm = System.properties['os.name'].toLowerCase().contains('windows') ? 'npm.cmd' : 'npm'
+
+task clean(type: Delete) {
+  delete rootProject.buildDir, 'dist'
+}
+
+task npmInstall(type: Exec) {
+  commandLine npm, 'install'
+
+  inputs.files('package.json', 'package-lock.json')
+  outputs.dir('node_modules')
+}
+
+task npmBuild(type: Exec) {
+  commandLine npm, 'run', 'build', '--prod'
+
+  inputs.file('../openapi.yaml')
+  inputs.dir('src')
+  inputs.dir('node_modules')
+  outputs.dir('dist')
+  outputs.dir('generated_src')
+}
+
+npmBuild.dependsOn 'npmInstall'
+
+task npmLint(type: Exec) {
+  commandLine npm, 'run', 'lint'
+
+  inputs.dir('src')
+  outputs.dir('dist')
+}
+
+task npmStart(type: Exec) {
+  commandLine npm, 'run', 'start'
+
+  inputs.dir('src')
+}
+
+task npmTest(type: Exec) {
+  commandLine npm, 'run', 'ci'
+
+  inputs.dir('src')
+  outputs.dir('dist')
+}
+
+npmTest.dependsOn 'npmBuild'
+
+task build(type: Task)
+build.dependsOn 'npmBuild', 'npmLint'
+
+task test(type: Task)
+test.dependsOn 'npmLint', 'npmTest'

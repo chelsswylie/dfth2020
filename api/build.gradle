@@ -1,0 +1,74 @@
+plugins {
+    id 'org.springframework.boot' version '2.3.4.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+    id 'org.hidetake.swagger.generator' version '2.18.2'
+    id 'java'
+}
+
+group = 'com.dfth2020'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    swaggerCodegen 'io.swagger.codegen.v3:swagger-codegen-cli:3.0.21'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+    implementation 'io.swagger:swagger-annotations:1.6.2'
+    implementation 'io.swagger.core.v3:swagger-annotations:2.1.4'
+    implementation 'org.postgresql:postgresql:42.2.16'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+swaggerSources {
+    server {
+        inputFile = file("$rootDir/openapi.yaml")
+        code {
+            language = 'spring'
+            additionalProperties = [
+                dateLibrary: 'java8-localdatetime',
+                interfaceOnly: 'true',
+                modelPackage: 'com.dfth2020.server.model',
+                apiPackage: 'com.dfth2020.server.api'
+            ]
+        }
+    }
+    client {
+        inputFile = file("$rootDir/openapi.yaml")
+        code {
+            language = 'java'
+            additionalProperties = [
+                library: 'resttemplate',
+                dateLibrary: 'java8-localdatetime',
+                modelPackage: 'com.dfth2020.client.model',
+                apiPackage: 'com.dfth2020.client.api'
+            ]
+        }
+    }
+}
+
+task deleteSpringFox(type: Delete) {
+    delete fileTree('build/swagger-code-dfth2020') {
+        include '**/Swagger2SpringBoot.java'
+        include '**/SwaggerDocumentationConfig.java'
+    }
+}
+
+compileJava.dependsOn swaggerSources.server.code
+sourceSets.main.java.srcDir "${swaggerSources.server.code.outputDir}/src/main/java"
+sourceSets.main.resources.srcDir "${swaggerSources.server.code.outputDir}/src/main/resources"
+
+compileTestJava.dependsOn swaggerSources.client.code
+sourceSets.test.java.srcDir "${swaggerSources.client.code.outputDir}/src/main/java"
+sourceSets.test.resources.srcDir "${swaggerSources.client.code.outputDir}/src/main/resources"
