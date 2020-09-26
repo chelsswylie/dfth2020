@@ -1,13 +1,15 @@
 package com.dfth2020.acceptance;
 
+import com.dfth2020.client.api.OrderApi;
 import com.dfth2020.client.api.OrderItemApi;
 import com.dfth2020.client.model.OrderItem;
+import com.dfth2020.client.model.Orders;
+import com.dfth2020.client.model.ProductionStep;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.HttpClientErrorException;
 
+import java.util.List;
 import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -15,12 +17,30 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class OrderAcceptanceTest extends BaseAcceptanceTest {
 
+    private OrderApi orderApi;
+
     private OrderItemApi orderItemApi;
 
     @BeforeEach
     public void before() {
+        orderApi = new OrderApi();
+        orderApi.setApiClient(getApiClient());
+
         orderItemApi = new OrderItemApi();
         orderItemApi.setApiClient(getApiClient());
+    }
+
+    @Test
+    public void ensureGetOrderReturns200() {
+        Orders orders = orderApi.getOrders();
+
+        assertThat(orders.getOrders()).isNotNull();
+
+        List<OrderItem> orderItems = orders.getOrders().get(0).getOrderItems();
+        assertThat(orderItems).hasAtLeastOneElementOfType(OrderItem.class);
+
+        List<ProductionStep> productionSteps = orderItems.get(0).getProductionSteps();
+        assertThat(productionSteps).hasAtLeastOneElementOfType(ProductionStep.class);
     }
 
     @Test
