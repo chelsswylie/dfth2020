@@ -2,10 +2,7 @@ package com.dfth2020.acceptance;
 
 import com.dfth2020.client.api.OrderApi;
 import com.dfth2020.client.api.OrderItemApi;
-import com.dfth2020.client.model.Order;
-import com.dfth2020.client.model.OrderItem;
-import com.dfth2020.client.model.Orders;
-import com.dfth2020.client.model.ProductionStep;
+import com.dfth2020.client.model.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.web.client.HttpClientErrorException;
@@ -34,7 +31,15 @@ public class OrderAcceptanceTest extends BaseAcceptanceTest {
 
     @Test
     public void ensureCreateOrderReturns200AndCreatesOrder() {
-        
+        CreateOrder createOrder = new CreateOrder();
+        createOrder.setNumOrderItems(1);
+
+        Order newOrder = orderApi.createOrder(createOrder);
+        assertThat(newOrder.getId()).isInstanceOf(UUID.class);
+
+        Order retrievedOrder = orderApi.getOrder(newOrder.getId());
+
+        assertThat(retrievedOrder).isEqualTo(newOrder);
     }
 
     @Test
