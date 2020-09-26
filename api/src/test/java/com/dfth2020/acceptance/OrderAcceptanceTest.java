@@ -51,6 +51,19 @@ public class OrderAcceptanceTest extends BaseAcceptanceTest {
 
         assertThat(order).isNotNull();
         assertThat(order.getId()).isEqualTo(UUID.fromString("ddfc229c-3c4f-4c5f-a59f-d7a1d8da8675"));
+
+        List<OrderItem> orderItems = order.getOrderItems();
+        assertThat(orderItems).hasAtLeastOneElementOfType(OrderItem.class);
+
+        List<ProductionStep> productionSteps = orderItems.get(0).getProductionSteps();
+        assertThat(productionSteps).hasAtLeastOneElementOfType(ProductionStep.class);
+    }
+
+    @Test
+    public void ensureGetOrderReturns404ForMissingOrder() {
+        assertThatThrownBy(() -> {
+            orderApi.getOrder(UUID.randomUUID());
+        }).isInstanceOf(HttpClientErrorException.NotFound.class);
     }
 
     @Test
