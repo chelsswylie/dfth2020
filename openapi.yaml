@@ -68,7 +68,7 @@ paths:
         - Order Item
   /productionStep/{productionStepId}:
     get:
-      operationId: getProductionStepId
+      operationId: getProductionStep
       parameters:
         - in: path
           name: productionStepId
@@ -86,7 +86,7 @@ paths:
         '400':
           description: The production step was not found.
       tags:
-        - Prodution Step
+        - Production Step
     post:
       operationId: updateProductionStep
       parameters:
@@ -183,11 +183,7 @@ components:
     UpdateProductionStep:
       type: object
       required:
-        - id
         - status
       properties:
-        id:
-          type: string
-          format: uuid
         status:
           $ref: '#/components/schemas/ProductionStepStatus'
