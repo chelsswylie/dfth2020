@@ -35,7 +35,7 @@ VALUES ('a59cb401-d8b4-4feb-871b-09f1abd168c1', '41b73992-3eac-4583-b11e-1a8b1fc
  'Marriage', 'not_started', 5);
 
 INSERT INTO production_step(id, order_item_id, step_code, title, description, status, step_order)
-VALUES ('9d150281-4005-45d0-b92d-40b5956e8544', '41b73992-3eac-4583-b11e-1a8b1fcad370', 'wait', 'Waistband',
+VALUES ('9d150281-4005-45d0-b92d-40b5956e8544', '41b73992-3eac-4583-b11e-1a8b1fcad370', 'waist', 'Waistband',
 'Waistband', 'not_started', 6);
 
 INSERT INTO production_step(id, order_item_id, step_code, title, description, status, step_order)
@@ -87,7 +87,7 @@ VALUES ('0cf0e5e1-e4b4-4342-91cc-8b4a970c59bd', '9530e143-454d-427a-8f1d-7c58b15
 'Marriage', 'not_started', 5);
 
 INSERT INTO production_step(id, order_item_id, step_code, title, description, status, step_order)
-VALUES ('e5c38851-126e-44b3-bb28-729133efcb5d', '9530e143-454d-427a-8f1d-7c58b15d9a41', 'wait', 'Waistband',
+VALUES ('e5c38851-126e-44b3-bb28-729133efcb5d', '9530e143-454d-427a-8f1d-7c58b15d9a41', 'waist', 'Waistband',
 'Waistband', 'not_started', 6);
 
 INSERT INTO production_step(id, order_item_id, step_code, title, description, status, step_order)

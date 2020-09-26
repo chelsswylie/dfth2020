@@ -2,6 +2,7 @@ package com.dfth2020.mapper;
 
 import com.dfth2020.entity.ProductionStepEntity;
 import com.dfth2020.server.model.ProductionStep;
+import com.dfth2020.server.model.ProductionStepStatus;
 import org.junit.jupiter.api.Test;
 
 import java.util.UUID;
@@ -26,7 +27,7 @@ public class ProductionStepMapperTest {
         assertThat(productionStep.getId()).isEqualTo(UUID.fromString("0657a16f-ea32-4d6e-907e-64b5c50f2be1"));
         assertThat(productionStep.getTitle()).isEqualTo("title");
         assertThat(productionStep.getDescription()).isEqualTo("description");
-        assertThat(productionStep.getStatus()).isEqualTo(ProductionStep.StatusEnum.NOT_STARTED);
+        assertThat(productionStep.getStatus()).isEqualTo(ProductionStepStatus.NOT_STARTED);
         assertThat(productionStep.getOrder()).isEqualTo("1");
     }
 }

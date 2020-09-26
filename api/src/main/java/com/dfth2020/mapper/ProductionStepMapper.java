@@ -2,6 +2,7 @@ package com.dfth2020.mapper;
 
 import com.dfth2020.entity.ProductionStepEntity;
 import com.dfth2020.server.model.ProductionStep;
+import com.dfth2020.server.model.ProductionStepStatus;
 
 import java.math.BigDecimal;
 
@@ -13,7 +14,7 @@ public class ProductionStepMapper {
         productionStep.setDescription(productionStepEntity.getDescription());
         productionStep.setStepCode(productionStepEntity.getStepCode());
         productionStep.setOrder(new BigDecimal(productionStepEntity.getStepOrder()));
-        productionStep.setStatus(ProductionStep.StatusEnum.fromValue(productionStepEntity.getStatus()));
+        productionStep.setStatus(ProductionStepStatus.fromValue(productionStepEntity.getStatus()));
 
         return productionStep;
     }
