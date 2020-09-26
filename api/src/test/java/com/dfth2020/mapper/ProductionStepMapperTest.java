@@ -8,7 +8,7 @@ import java.util.UUID;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-public class ProductionStepEntityTest {
+public class ProductionStepMapperTest {
 
     @Test
     public void ensureMapProductionStepMapsFromEntity() {
