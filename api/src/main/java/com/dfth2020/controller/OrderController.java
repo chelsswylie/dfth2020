@@ -3,6 +3,7 @@ package com.dfth2020.controller;
 import com.dfth2020.entity.OrderEntity;
 import com.dfth2020.entity.OrderItemEntity;
 import com.dfth2020.entity.ProductionStepEntity;
+import com.dfth2020.generator.OrderGenerator;
 import com.dfth2020.mapper.OrderItemMapper;
 import com.dfth2020.mapper.OrderMapper;
 import com.dfth2020.mapper.ProductionStepMapper;
@@ -10,18 +11,16 @@ import com.dfth2020.repository.OrderItemRepository;
 import com.dfth2020.repository.OrderRepository;
 import com.dfth2020.repository.ProductionStepRepository;
 import com.dfth2020.server.api.OrderApi;
-import com.dfth2020.server.model.Order;
-import com.dfth2020.server.model.OrderItem;
-import com.dfth2020.server.model.Orders;
-import com.dfth2020.server.model.ProductionStep;
+import com.dfth2020.server.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
-import java.util.stream.Collectors;
+import java.util.function.Function;
 
 import static java.util.stream.Collectors.toList;
 
@@ -43,21 +42,34 @@ public class OrderController implements OrderApi {
     }
 
     @Override
+    public ResponseEntity<Order> createOrder(@Valid CreateOrder createOrder) {
+        OrderEntity orderEntity = OrderGenerator.generateOrder(createOrder);
+
+        OrderEntity createdOrderEntity = orderRepository.save(orderEntity);
+
+        Order order = mapOrderEntityToOrder(createdOrderEntity);
+
+        return ResponseEntity.ok(order);
+    }
+
+    @Override
     public ResponseEntity<Orders> getOrders() {
         List<OrderEntity> orderEntities = orderRepository.findAll();
 
-        List<Order> orderList = orderEntities.stream().map(orderEntity -> {
-           List<OrderItem> orderItems = orderEntity.getOrderItems().stream().map(orderItem -> {
-              List<ProductionStep> productionSteps = orderItem.getProductionSteps().stream().map(ProductionStepMapper::mapProductionStep).collect(toList());
-              return OrderItemMapper.mapOrderItem(orderItem, productionSteps);
-           }).collect(toList());
-
-           return OrderMapper.mapOrder(orderEntity, orderItems);
-        }).collect(toList());
+        List<Order> orderList = orderEntities.stream().map(this::mapOrderEntityToOrder).collect(toList());
 
         Orders orders = OrderMapper.mapOrders(orderList);
 
         return ResponseEntity.ok(orders);
+    }
+
+    private Order mapOrderEntityToOrder(OrderEntity orderEntity) {
+        List<OrderItem> orderItems = orderEntity.getOrderItems().stream().map(orderItem -> {
+            List<ProductionStep> productionSteps = orderItem.getProductionSteps().stream().map(ProductionStepMapper::mapProductionStep).collect(toList());
+            return OrderItemMapper.mapOrderItem(orderItem, productionSteps);
+        }).collect(toList());
+
+        return OrderMapper.mapOrder(orderEntity, orderItems);
     }
 
     @Override

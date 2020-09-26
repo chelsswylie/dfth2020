@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./production-process.component.css'],
 })
 export class ProductionProcessComponent implements OnInit {
-  //title = 'dfth2020-ui';
+  // title = 'dfth2020-ui';
 
   currentProductionStepsAndStatus = [
     { title: 'Marker Making and Cutting', stepCode: 'firstStep', status: 'Pending' },
