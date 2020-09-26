@@ -5,20 +5,17 @@ import javax.persistence.Id;
 import java.util.Objects;
 
 @Entity
-public class OrderItem {
+public class OrderEntity {
 
     @Id
     private String id;
 
-    private String orderId;
-
-    public OrderItem() {
+    public OrderEntity() {
 
     }
 
-    public OrderItem(String id, String orderId) {
+    public OrderEntity(String id) {
         this.id = id;
-        this.orderId = orderId;
     }
 
     public String getId() {
@@ -29,25 +26,16 @@ public class OrderItem {
         this.id = id;
     }
 
-    public String getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        OrderItem orderItem = (OrderItem) o;
-        return Objects.equals(id, orderItem.id) &&
-                Objects.equals(orderId, orderItem.orderId);
+        OrderEntity orderEntity = (OrderEntity) o;
+        return Objects.equals(id, orderEntity.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, orderId);
+        return Objects.hash(id);
     }
 }

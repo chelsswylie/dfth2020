@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS production_step (
     FOREIGN KEY (order_item_id) REFERENCES order_item(id)
 );
 
-CREATE TABLE IF NOT EXISTS media (
+CREATE TABLE IF NOT EXISTS mediaEntity (
     id UUID DEFAULT uuid_generate_v4() NOT NULL,
     production_step_id UUID NOT NULL,
     media_url VARCHAR(2500) NOT NULL,

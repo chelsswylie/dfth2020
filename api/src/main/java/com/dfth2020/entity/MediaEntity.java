@@ -5,7 +5,7 @@ import javax.persistence.Id;
 import java.util.Objects;
 
 @Entity
-public class Media {
+public class MediaEntity {
 
     @Id
     private String id;
@@ -14,11 +14,11 @@ public class Media {
 
     private String mediaUrl;
 
-    public Media() {
+    public MediaEntity() {
 
     }
 
-    public Media(String id, String productionStepId, String mediaUrl) {
+    public MediaEntity(String id, String productionStepId, String mediaUrl) {
         this.id = id;
         this.productionStepId = productionStepId;
         this.mediaUrl = mediaUrl;
@@ -52,10 +52,10 @@ public class Media {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Media media = (Media) o;
-        return Objects.equals(id, media.id) &&
-                Objects.equals(productionStepId, media.productionStepId) &&
-                Objects.equals(mediaUrl, media.mediaUrl);
+        MediaEntity mediaEntity = (MediaEntity) o;
+        return Objects.equals(id, mediaEntity.id) &&
+                Objects.equals(productionStepId, mediaEntity.productionStepId) &&
+                Objects.equals(mediaUrl, mediaEntity.mediaUrl);
     }
 
     @Override

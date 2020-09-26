@@ -5,7 +5,7 @@ import javax.persistence.Id;
 import java.util.Objects;
 
 @Entity
-public class ProductionStep {
+public class ProductionStepEntity {
 
     @Id
     private String id;
@@ -22,12 +22,12 @@ public class ProductionStep {
 
     private Integer stepOrder;
 
-    public ProductionStep() {
+    public ProductionStepEntity() {
 
     }
 
-    public ProductionStep(String id, String orderItemId, String stepCode, String title,
-                          String description, String status, Integer stepOrder) {
+    public ProductionStepEntity(String id, String orderItemId, String stepCode, String title,
+                                String description, String status, Integer stepOrder) {
         this.id = id;
         this.orderItemId = orderItemId;
         this.stepCode = stepCode;
@@ -97,7 +97,7 @@ public class ProductionStep {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ProductionStep that = (ProductionStep) o;
+        ProductionStepEntity that = (ProductionStepEntity) o;
         return Objects.equals(id, that.id) &&
                 Objects.equals(orderItemId, that.orderItemId) &&
                 Objects.equals(stepCode, that.stepCode) &&
