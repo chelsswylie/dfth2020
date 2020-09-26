@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OrderItem, OrderItemService } from "../../../generated_src";
 
 @Component({
   selector: 'app-order-item-page',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderItemPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private orderItemService: OrderItemService) { }
+
+  orderItem: OrderItem;
 
   ngOnInit(): void {
+    this.orderItemService.orderOrderIdItemOrderItemIdGet('id', 'id')
+      .subscribe( orderItem => {
+        this.orderItem = orderItem;
+      });
   }
 
 }

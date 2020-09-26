@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Order, OrderService } from "../../../generated_src";
 
 @Component({
   selector: 'app-orders-page',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrdersPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private orderService: OrderService) { }
+
+  order: Order;
 
   ngOnInit(): void {
+    this.orderService.orderOrderIdGet('id','body', true)
+      .subscribe(order => {
+        this.order = order;
+      });
   }
 
 }
