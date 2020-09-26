@@ -15,11 +15,11 @@ CREATE TABLE IF NOT EXISTS order_item (
 CREATE TABLE IF NOT EXISTS production_step (
     id UUID DEFAULT uuid_generate_v4() NOT NULL,
     order_item_id UUID NOT NULL,
-    step_code VARCHAR(50),
-    title VARCHAR(50),
-    description TEXT,
-    status VARCHAR(20),
-    step_order INTEGER,
+    step_code VARCHAR(50) NOT NULL,
+    title VARCHAR(50) NOT NULL,
+    description TEXT NOT NULL,
+    status VARCHAR(20) NOT NULL,
+    step_order INTEGER NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (order_item_id) REFERENCES order_item(id)
 );
