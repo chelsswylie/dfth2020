@@ -66,22 +66,10 @@ paths:
           description: An order item is not found.
       tags:
         - Order Item
-  /order/{orderId}/item/{orderItemId}/productionStep/{productionStepId}:
+  /productionStep/{productionStepId}:
     post:
       operationId: updateProductionStep
       parameters:
-        - in: path
-          name: orderId
-          schema:
-            type: string
-            format: uuid
-          required: true
-        - in: path
-          name: orderItemId
-          schema:
-            type: string
-            format: uuid
-          required: true
         - in: path
           name: productionStepId
           schema:
