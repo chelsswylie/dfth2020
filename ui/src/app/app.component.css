@@ -1,0 +1,155 @@
+/* body {
+  margin: 0;
+  font-family: sans-serif;
+  height: 100vh;
+  width: 100vw;
+}
+
+#hero-ish {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#logo {
+  max-width: 10%;
+  height: auto;
+
+  position: absolute;
+  top: 60px;
+  left: 220px;
+  z-index: 2;
+}
+#logo:hover {
+  opacity: 0.5;
+} */
+
+/* .hero { */
+/* Sizing */
+/* width: 100vw;
+  height: 10vh; */
+
+/* Flexbox stuff */
+/* display: flex;
+  justify-content: center;
+  align-items: center; */
+/* Text styles */
+/* text-align: center;
+} */
+/* 
+.hero .btn { */
+/* Positioning and sizing */
+/* display: block;
+  width: 500px; */
+
+/* Padding and margins */
+/* padding: 1em;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto; */
+
+/* Text styles */
+/* color: black;
+  text-decoration: none;
+  font-size: 1.5em; */
+
+/* Border styles */
+/* border: 3px solid black;
+  border-radius: 20px;
+} */
+
+/* .loopy {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+} */
+
+/* .pre-production {
+  display: block;
+  margin: auto;
+  width: 50%;
+  height: 75%;
+} */
+/* .cont {
+  float: left;
+  width: 33%;
+  height: 25%; */
+/* Possible change to auto 
+      for height to accommodate whatever is included in div  */
+/* margin: auto;
+  margin-top: 25%;
+  border: 1px white solid;
+  background-color: blueviolet;
+} */
+
+/* .happyCustomer {
+  display: block;
+  margin: auto;
+  width: 50%;
+  height: 75%;
+} */
+
+/* #happy {
+  float: left;
+  width: 99%;
+  height: 25%; */
+/* Possible change to auto 
+        for height to accommodate whatever is included in div  */
+/* margin-left: auto;
+  border: 1px white solid;
+  background-color: blueviolet;
+} */
+
+/* 
+img {
+  margin: auto;
+  display: block;
+  width: 300px;
+  max-width: 100%;
+}
+
+.pre-production {
+  display: block;
+  margin: auto;
+  width: 50%;
+  height: 75%;
+}
+.cont {
+  float: left;
+  width: 33%;
+  height: 25%; */
+/* Possible change to auto 
+      for height to accommodate whatever is included in div  */
+/* margin: auto;
+  margin-top: 25%;
+  border: 1px white solid;
+  background-color: blueviolet;
+}
+
+.happyCustomer {
+  display: block;
+  margin: auto;
+  width: 50%;
+  height: 75%;
+}
+
+#happy {
+  float: left;
+  width: 99%;
+  height: 25%; */
+/* Possible change to auto 
+        for height to accommodate whatever is included in div  */
+/* margin-left: auto;
+  border: 1px white solid;
+  background-color: blueviolet;
+} */
