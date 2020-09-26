@@ -21,12 +21,15 @@ public class OrderAcceptanceTest extends BaseAcceptanceTest {
 
     @Test
     public void ensureGetOrderItemsReturns404ForMissingOrder() {
+        assertThatThrownBy(() -> {
+            orderItemApi.orderOrderIdItemOrderItemIdGet(UUID.randomUUID(), UUID.randomUUID());
+        }).isInstanceOf(HttpClientErrorException.NotFound.class);
     }
 
     @Test
     public void ensureGetOrderItemsReturns404ForMissingOrderItem() {
         assertThatThrownBy(() -> {
-            orderItemApi.orderOrderIdItemOrderItemIdGet(UUID.randomUUID(), UUID.randomUUID());
+            orderItemApi.orderOrderIdItemOrderItemIdGet(UUID.fromString("ddfc229c-3c4f-4c5f-a59f-d7a1d8da8675"), UUID.randomUUID());
         }).isInstanceOf(HttpClientErrorException.NotFound.class);
     }
 }
