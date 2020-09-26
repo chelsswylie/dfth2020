@@ -13,9 +13,9 @@ const routerOptions: ExtraOptions = {
 
 const routes: Routes = [
   { path: '', component: ProductionProcessComponent },
-  { path: 'orderItemPage', component: OrderItemPageComponent },
-  { path: 'productionProcess', component: ProductionProcessComponent },
-  { path: 'ordersPage', component: OrdersPageComponent },
+  { path: 'order', component: OrdersPageComponent },
+  { path: 'order/:orderId/item/:orderItemId', component: OrderItemPageComponent },
+  { path: 'production-process', component: ProductionProcessComponent },
 ];
 
 @NgModule({

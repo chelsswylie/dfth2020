@@ -105,6 +105,7 @@
               "e2e/tsconfig.json"
             ],
             "exclude": [
+              "**/generated_src/**",
               "**/node_modules/**"
             ]
           }

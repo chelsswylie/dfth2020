@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Orders, OrderService} from "../../../generated_src";
+import {Orders, OrderService} from '../../../generated_src';
 
 @Component({
   selector: 'app-orders-page',
