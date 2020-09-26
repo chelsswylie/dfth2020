@@ -9,6 +9,4 @@ import java.util.UUID;
 
 public interface OrderRepository extends JpaRepository<OrderEntity, UUID> {
 
-    @Query("SELECT oI FROM customer_order oI WHERE oI.orderId=:orderId")
-    Optional<OrderEntity> findById(UUID orderId);
 }
