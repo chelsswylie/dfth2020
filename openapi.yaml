@@ -99,7 +99,7 @@ paths:
             'application/json':
               schema:
                 $ref: '#/components/schemas/ProductionStep'
-        '400':
+        '404':
           description: The production step was not found.
       tags:
         - Production Step
