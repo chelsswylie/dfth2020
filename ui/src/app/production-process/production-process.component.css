@@ -5,7 +5,7 @@ body {
   width: 100vw;
 }
 
-#hero-ish {
+/* #hero-ish {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -32,7 +32,7 @@ body {
 }
 #logo:hover {
   opacity: 0.5;
-}
+} */
 
 .hero .btn {
   /* Positioning and sizing */

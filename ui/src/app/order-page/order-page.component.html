@@ -1,4 +1,9 @@
-<h3 style="padding-left: 10px; margin: 0;">Your Order:</h3>
+<h3 style="padding-left: 10px; margin: 0">Your Order:</h3>
+
+<div id="backgroundImage">
+  <img id="hero-ish" src="/assets/Combined.png" alt="logo" />
+  <!-- <div id="descriptionBox">Empty box</div> -->
+</div>
 <!--
 <ul>
   <li *ngFor="let orderItem of order.orderItems">
@@ -6,6 +11,16 @@
   </li>
 </ul>
 <pre>{{order | json}}</pre>-->
-<mat-nav-list>
-  <a mat-list-item [routerLink]="['/order', order.id, 'item', orderItem.id]" *ngFor="let orderItem of order.orderItems"> {{orderItem.id}} </a>
-</mat-nav-list>
+
+<div id="outerBox">
+  <mat-nav-list>
+    <a
+      mat-list-item
+      [routerLink]="['/order', order.id, 'item', orderItem.id]"
+      *ngFor="let orderItem of order.orderItems"
+      [attr.id]="orderItem.id"
+    >
+      {{ orderItem.id }}
+    </a>
+  </mat-nav-list>
+</div>

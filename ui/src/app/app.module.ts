@@ -14,6 +14,7 @@ import {NavBarComponent} from './nav-bar/nav-bar.component';
 import {HttpClientModule} from '@angular/common/http';
 import {BASE_PATH} from '../../generated_src';
 import { OrderPageComponent } from './order-page/order-page.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { OrderPageComponent } from './order-page/order-page.component';
     OrderItemPageComponent,
     NavBarComponent,
     OrderPageComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

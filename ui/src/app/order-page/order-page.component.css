@@ -1,0 +1,25 @@
+#hero-ish {
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+#outerBox {
+  margin-left: 25%;
+  position: fixed;
+  z-index: 2;
+  height: 100vh;
+  width: 50%;
+  color: black;
+  background-color: white;
+  /* opacity: 0.3; */
+  display: flex;
+  justify-content: center;
+  /* width */
+  overflow: scroll;
+}

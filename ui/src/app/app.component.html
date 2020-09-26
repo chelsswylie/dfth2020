@@ -1,4 +1,23 @@
-<app-nav-bar></app-nav-bar>
+<!-- <app-nav-bar></app-nav-bar> -->
+<div class="nav-section">
+  <ul class="nav-links">
+    <!-- For home link below, possibly set up with logo to navigate back to the Detroit Denim Co site -->
+    <li>
+      <a href="https://detroitdenim.com/"
+        ><img id="logo" src="/assets/ddenimlogo.jpg" alt="logo"
+      /></a>
+    </li>
+    <li><a [routerLink]="['/']">Home</a></li>
+    <li><a [routerLink]="['/order']">My Orders</a></li>
+    <li><a [routerLink]="['/production-process']">Production Process</a></li>
+  </ul>
+</div>
+<body>
+  <div class="heroimg">
+    <!-- <img id="logo" src="/assets/ddenimlogo.jpg" alt="logo" /> -->
+    <img id="hero-ish" src="/assets/Combined.png" alt="Hero Image" />
+  </div>
+</body>
 <router-outlet></router-outlet>
 
 <!-- <body>
