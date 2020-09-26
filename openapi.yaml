@@ -6,23 +6,120 @@ info:
   version: 1.0.0
   title: DFTH 2020
 paths:
-  /hello/world:
+  /order:
     get:
       responses:
         '200':
-          description: Retieve Hello World object.
+          description: Retrieve summaries of all orders.
           content:
             'application/json':
               schema:
-                $ref: '#/components/schemas/HelloWorld'
+                $ref: '#/components/schemas/Orders'
       tags:
-        - Hello World
+        - Order
+  /order/{orderId}:
+    get:
+      parameters:
+        - in: path
+          name: orderId
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Retrieve a specific order.
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/Order'
+        '404':
+          description: An order is not found.
+      tags:
+        - Order
+  /order/{orderId}/item/{orderItemId}:
+    get:
+      parameters:
+        - in: path
+          name: orderId
+          schema:
+            type: string
+          required: true
+        - in: path
+          name: orderItemId
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Retrieve a specific order item from an order.
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/OrderItem'
+        '404':
+          description: An order item is not found.
+      tags:
+        - Order Item
 components:
   schemas:
-    HelloWorld:
+    Orders:
       type: object
       required:
-        - hello
+        - orders
       properties:
-        hello:
+        orders:
+          type: array
+          items:
+            $ref: '#/components/schemas/OrderItem'
+    Order:
+      type: object
+      required:
+        - id
+        - orderItems
+      properties:
+        id:
           type: string
+        orderItems:
+          type: array
+          items:
+            $ref: '#/components/schemas/OrderItem'
+    OrderItem:
+      type: object
+      required:
+        - id
+        - productionSteps
+      properties:
+        id:
+          type: string
+        productionSteps:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductionStep'
+    ProductionStep:
+      type: object
+      required:
+        - id
+        - stepCode
+        - title
+        - description
+        - media
+        - status
+      properties:
+        id:
+          type: string
+        stepCode:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        media:
+          type: array
+          items:
+            type: string
+        status:
+          type: string
+          enum:
+            - not_started
+            - in_progress
+            - complete

@@ -1,21 +1,21 @@
 package com.dfth2020.acceptance;
 
-import com.dfth2020.client.ApiClient;
-import com.dfth2020.client.api.HelloWorldApi;
-import com.dfth2020.client.model.HelloWorld;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.server.LocalServerPort;
+import org.springframework.web.client.RestTemplate;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class HelloWorldTest extends BaseAcceptanceTest {
 
+    @LocalServerPort
+    private int port;
+
     @Test
     public void ensureGetHelloWorldReturnsResponse() {
-        HelloWorldApi helloWorldApi = new HelloWorldApi(getApiClient());
+        RestTemplate restTemplate = new RestTemplate();
+        String helloWorld = restTemplate.getForObject("http://localhost:" + port + "/api/hello/world", String.class);
 
-        HelloWorld helloWorld = helloWorldApi.helloWorldGet();
-
-        assertThat(helloWorld.getHello()).isEqualTo("world");
+        assertThat(helloWorld).isEqualTo("hello world");
     }
 }
