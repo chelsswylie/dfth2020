@@ -3,6 +3,7 @@ package com.dfth2020.mapper;
 import com.dfth2020.entity.OrderEntity;
 import com.dfth2020.server.model.Order;
 import com.dfth2020.server.model.OrderItem;
+import com.dfth2020.server.model.Orders;
 import org.junit.jupiter.api.Test;
 
 import java.util.Collections;
@@ -12,6 +13,15 @@ import java.util.UUID;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class OrderMapperTest {
+
+    @Test
+    public void ensureMapOrdersMapsFromList() {
+        List<Order> orderList = Collections.singletonList(new Order());
+
+        Orders orders = OrderMapper.mapOrders(orderList);
+
+        assertThat(orders.getOrders()).isEqualTo(orderList);
+    }
 
     @Test
     public void ensureMapOrderMapsFromEntity() {
