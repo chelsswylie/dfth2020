@@ -104,6 +104,7 @@ components:
         - description
         - media
         - status
+        - order
       properties:
         id:
           type: string
@@ -123,3 +124,6 @@ components:
             - not_started
             - in_progress
             - complete
+        order:
+          type: number
+          format: int32
