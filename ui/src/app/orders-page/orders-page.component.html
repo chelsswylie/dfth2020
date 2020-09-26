@@ -1,1 +1,6 @@
-<p>orders-page works!</p>
+<ul><p>orders-page works!</p>
+
+  <li *ngFor="let order of orders.orders">
+    <a [routerLink]="['/order', order.id]">{{order.id}}</a>
+  </li>
+</ul>

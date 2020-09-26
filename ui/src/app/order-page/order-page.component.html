@@ -1,0 +1,6 @@
+<p>order-page works!</p>
+<ul><li *ngFor="let orderItem of order.orderItems">
+    <a [routerLink]="['/order', order.id, 'item', orderItem.id]">{{orderItem.id}}</a>
+  </li>
+</ul>
+<pre>{{order | json}}</pre>
