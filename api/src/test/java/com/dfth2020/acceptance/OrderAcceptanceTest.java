@@ -33,6 +33,11 @@ public class OrderAcceptanceTest extends BaseAcceptanceTest {
     }
 
     @Test
+    public void ensureCreateOrderReturns200AndCreatesOrder() {
+        
+    }
+
+    @Test
     public void ensureGetOrderReturns200() {
         Orders orders = orderApi.getOrders();
 
