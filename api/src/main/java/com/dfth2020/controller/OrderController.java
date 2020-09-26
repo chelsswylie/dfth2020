@@ -61,6 +61,26 @@ public class OrderController implements OrderApi {
     }
 
     @Override
+    public ResponseEntity<Order> getOrder(UUID orderId) {
+        Optional<OrderEntity> maybeOrderEntity = orderRepository.findById(orderId);
+
+        if (maybeOrderEntity.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+
+        OrderEntity orderEntity = maybeOrderEntity.get();
+
+        List<OrderItem> orderItems = orderEntity.getOrderItems().stream().map(orderItem -> {
+            List<ProductionStep> productionSteps = orderItem.getProductionSteps().stream().map(ProductionStepMapper::mapProductionStep).collect(toList());
+            return OrderItemMapper.mapOrderItem(orderItem, productionSteps);
+        }).collect(toList());
+
+        Order order = OrderMapper.mapOrder(orderEntity, orderItems);
+
+        return ResponseEntity.ok(order);
+    }
+
+    @Override
     public ResponseEntity<OrderItem> getOrderItem(UUID orderId, UUID orderItemId) {
         Optional<OrderItemEntity> orderItemEntity = orderItemRepository.findByIdAndOrderItemId(orderId, orderItemId);
 
