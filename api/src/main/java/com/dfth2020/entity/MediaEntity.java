@@ -3,14 +3,15 @@ package com.dfth2020.entity;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.util.Objects;
+import java.util.UUID;
 
-@Entity
+@Entity(name = "media")
 public class MediaEntity {
 
     @Id
-    private String id;
+    private UUID id;
 
-    private String productionStepId;
+    private UUID productionStepId;
 
     private String mediaUrl;
 
@@ -18,25 +19,25 @@ public class MediaEntity {
 
     }
 
-    public MediaEntity(String id, String productionStepId, String mediaUrl) {
+    public MediaEntity(UUID id, UUID productionStepId, String mediaUrl) {
         this.id = id;
         this.productionStepId = productionStepId;
         this.mediaUrl = mediaUrl;
     }
 
-    public String getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
-    public String getProductionStepId() {
+    public UUID getProductionStepId() {
         return productionStepId;
     }
 
-    public void setProductionStepId(String productionStepId) {
+    public void setProductionStepId(UUID productionStepId) {
         this.productionStepId = productionStepId;
     }
 

@@ -3,37 +3,38 @@ package com.dfth2020.entity;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.util.Objects;
+import java.util.UUID;
 
-@Entity
+@Entity(name = "order_item")
 public class OrderItemEntity {
 
     @Id
-    private String id;
+    private UUID id;
 
-    private String orderId;
+    private UUID orderId;
 
     public OrderItemEntity() {
 
     }
 
-    public OrderItemEntity(String id, String orderId) {
+    public OrderItemEntity(UUID id, UUID orderId) {
         this.id = id;
         this.orderId = orderId;
     }
 
-    public String getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
-    public String getOrderId() {
+    public UUID getOrderId() {
         return orderId;
     }
 
-    public void setOrderId(String orderId) {
+    public void setOrderId(UUID orderId) {
         this.orderId = orderId;
     }
 

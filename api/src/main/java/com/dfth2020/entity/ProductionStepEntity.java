@@ -3,14 +3,15 @@ package com.dfth2020.entity;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.util.Objects;
+import java.util.UUID;
 
-@Entity
+@Entity(name = "production_step")
 public class ProductionStepEntity {
 
     @Id
-    private String id;
+    private UUID id;
 
-    private String orderItemId;
+    private UUID orderItemId;
 
     private String stepCode;
 
@@ -26,7 +27,7 @@ public class ProductionStepEntity {
 
     }
 
-    public ProductionStepEntity(String id, String orderItemId, String stepCode, String title,
+    public ProductionStepEntity(UUID id, UUID orderItemId, String stepCode, String title,
                                 String description, String status, Integer stepOrder) {
         this.id = id;
         this.orderItemId = orderItemId;
@@ -37,11 +38,11 @@ public class ProductionStepEntity {
         this.stepOrder = stepOrder;
     }
 
-    public String getId() {
+    public UUID getId() {
         return id;
     }
 
-    public String getOrderItemId() {
+    public UUID getOrderItemId() {
         return orderItemId;
     }
 
@@ -65,11 +66,11 @@ public class ProductionStepEntity {
         return stepOrder;
     }
 
-    public void setId(String id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
-    public void setOrderItemId(String orderItemId) {
+    public void setOrderItemId(UUID orderItemId) {
         this.orderItemId = orderItemId;
     }
 
