@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 import java.util.UUID;
 
-public interface ProductionStepRepository extends JpaRepository<ProductionStepEntity, String> {
+public interface ProductionStepRepository extends JpaRepository<ProductionStepEntity, UUID> {
 
     List<ProductionStepEntity> findByOrderItemId(UUID orderItemId);
 }

@@ -15,7 +15,7 @@ public class OrderEntityTest {
         OrderEntity orderEntity = new OrderEntity();
         orderEntity.setId(UUID.fromString("0657a16f-ea32-4d6e-907e-64b5c50f2be1"));
 
-        Order order = OrderMapper.mapOrder(orderEntity);
+        Order order = OrderMapper.mapOrder(orderEntity, orderItems);
 
         assertThat(order.getId()).isEqualTo(UUID.fromString("0657a16f-ea32-4d6e-907e-64b5c50f2be1"));
     }

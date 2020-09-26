@@ -2,6 +2,8 @@ package com.dfth2020.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -13,13 +15,17 @@ public class OrderItemEntity {
 
     private UUID orderId;
 
+    @OneToMany(mappedBy = "orderItemId")
+    private List<ProductionStepEntity> productionSteps;
+
     public OrderItemEntity() {
 
     }
 
-    public OrderItemEntity(UUID id, UUID orderId) {
+    public OrderItemEntity(UUID id, UUID orderId, List<ProductionStepEntity> productionSteps) {
         this.id = id;
         this.orderId = orderId;
+        this.productionSteps = productionSteps;
     }
 
     public UUID getId() {
@@ -38,17 +44,26 @@ public class OrderItemEntity {
         this.orderId = orderId;
     }
 
+    public List<ProductionStepEntity> getProductionSteps() {
+        return productionSteps;
+    }
+
+    public void setProductionSteps(List<ProductionStepEntity> productionSteps) {
+        this.productionSteps = productionSteps;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        OrderItemEntity orderItemEntity = (OrderItemEntity) o;
-        return Objects.equals(id, orderItemEntity.id) &&
-                Objects.equals(orderId, orderItemEntity.orderId);
+        OrderItemEntity that = (OrderItemEntity) o;
+        return Objects.equals(id, that.id) &&
+                Objects.equals(orderId, that.orderId) &&
+                Objects.equals(productionSteps, that.productionSteps);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, orderId);
+        return Objects.hash(id, orderId, productionSteps);
     }
 }
