@@ -8,15 +8,15 @@ import { OrderItem, OrderItemService } from "../../../generated_src";
 })
 export class OrderItemPageComponent implements OnInit {
 
-  constructor(private orderItemService: OrderItemService) { }
+  constructor(private orderItemService: OrderItemService) {
+  }
 
   orderItem: OrderItem;
 
   ngOnInit(): void {
-    this.orderItemService.orderOrderIdItemOrderItemIdGet('id', 'id')
-      .subscribe( orderItem => {
+    this.orderItemService.getOrderItem('id', 'id')
+      .subscribe(orderItem => {
         this.orderItem = orderItem;
       });
   }
-
 }
