@@ -32,7 +32,7 @@ public class OrderController implements OrderApi {
     }
 
     @Override
-    public ResponseEntity<OrderItem> orderOrderIdItemOrderItemIdGet(UUID orderId, UUID orderItemId) {
+    public ResponseEntity<OrderItem> getOrderItem(UUID orderId, UUID orderItemId) {
         Optional<OrderItemEntity> orderItemEntity = orderItemRepository.findByIdAndOrderItemId(orderId, orderItemId);
 
         if (orderItemEntity.isEmpty()) {

@@ -8,6 +8,7 @@ info:
 paths:
   /order:
     get:
+      operationId: getOrders
       responses:
         '200':
           description: Retrieve summaries of all orders.
@@ -19,6 +20,7 @@ paths:
         - Order
   /order/{orderId}:
     get:
+      operationId: getOrder
       parameters:
         - in: path
           name: orderId
@@ -39,6 +41,7 @@ paths:
         - Order
   /order/{orderId}/item/{orderItemId}:
     get:
+      operationId: getOrderItem
       parameters:
         - in: path
           name: orderId

@@ -25,7 +25,7 @@ public class OrderAcceptanceTest extends BaseAcceptanceTest {
 
     @Test
     public void ensureGetOrderItemReturns200ForFoundOrderItem() {
-        OrderItem orderItem = orderItemApi.orderOrderIdItemOrderItemIdGet(UUID.fromString("ddfc229c-3c4f-4c5f-a59f-d7a1d8da8675"), UUID.fromString("41b73992-3eac-4583-b11e-1a8b1fcad370"));
+        OrderItem orderItem = orderItemApi.getOrderItem(UUID.fromString("ddfc229c-3c4f-4c5f-a59f-d7a1d8da8675"), UUID.fromString("41b73992-3eac-4583-b11e-1a8b1fcad370"));
 
         assertThat(orderItem).isNotNull();
     }
@@ -33,14 +33,14 @@ public class OrderAcceptanceTest extends BaseAcceptanceTest {
     @Test
     public void ensureGetOrderItemsReturns404ForMissingOrder() {
         assertThatThrownBy(() -> {
-            orderItemApi.orderOrderIdItemOrderItemIdGet(UUID.randomUUID(), UUID.randomUUID());
+            orderItemApi.getOrderItem(UUID.randomUUID(), UUID.randomUUID());
         }).isInstanceOf(HttpClientErrorException.NotFound.class);
     }
 
     @Test
     public void ensureGetOrderItemsReturns404ForMissingOrderItem() {
         assertThatThrownBy(() -> {
-            orderItemApi.orderOrderIdItemOrderItemIdGet(UUID.fromString("ddfc229c-3c4f-4c5f-a59f-d7a1d8da8675"), UUID.randomUUID());
+            orderItemApi.getOrderItem(UUID.fromString("ddfc229c-3c4f-4c5f-a59f-d7a1d8da8675"), UUID.randomUUID());
         }).isInstanceOf(HttpClientErrorException.NotFound.class);
     }
 }
