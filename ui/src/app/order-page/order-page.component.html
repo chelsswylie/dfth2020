@@ -1,6 +1,11 @@
-<p>order-page works!</p>
-<ul><li *ngFor="let orderItem of order.orderItems">
+<h3 style="padding-left: 10px; margin: 0;">Your Order:</h3>
+<!--
+<ul>
+  <li *ngFor="let orderItem of order.orderItems">
     <a [routerLink]="['/order', order.id, 'item', orderItem.id]">{{orderItem.id}}</a>
   </li>
 </ul>
-<pre>{{order | json}}</pre>
+<pre>{{order | json}}</pre>-->
+<mat-nav-list>
+  <a mat-list-item [routerLink]="['/order', order.id, 'item', orderItem.id]" *ngFor="let orderItem of order.orderItems"> {{orderItem.id}} </a>
+</mat-nav-list>

@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  // title = 'dfth2020-ui';
+  title = 'dfth2020-ui';
   // currentProductionStepsAndStatus = [
   //   {title: 'Marker Making and Cutting', stepCode: 'firstStep', status: 'Pending'},
   //   {title: 'Production Preparation', stepCode: 'secondStep', status: 'Pending'},

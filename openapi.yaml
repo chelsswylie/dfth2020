@@ -18,6 +18,22 @@ paths:
                 $ref: '#/components/schemas/Orders'
       tags:
         - Order
+    post:
+      operationId: createOrder
+      requestBody:
+        content:
+          'application/json':
+            schema:
+              $ref: '#/components/schemas/CreateOrder'
+      responses:
+        '200':
+          description: A new order is created and returned.
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/Order'
+      tags:
+        - Order
   /order/{orderId}:
     get:
       operationId: getOrder
@@ -110,6 +126,12 @@ paths:
         - Production Step
 components:
   schemas:
+    CreateOrder:
+      type: object
+      properties:
+        numOrderItems:
+          type: integer
+          format: int32
     Orders:
       type: object
       required:

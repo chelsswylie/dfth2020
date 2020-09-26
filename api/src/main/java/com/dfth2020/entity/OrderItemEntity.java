@@ -1,5 +1,6 @@
 package com.dfth2020.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -15,7 +16,7 @@ public class OrderItemEntity {
 
     private UUID orderId;
 
-    @OneToMany(mappedBy = "orderItemId")
+    @OneToMany(mappedBy = "orderItemId", cascade = {CascadeType.ALL})
     private List<ProductionStepEntity> productionSteps;
 
     public OrderItemEntity() {
