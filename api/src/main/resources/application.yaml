@@ -3,7 +3,6 @@ spring:
     hibernate:
       ddl-auto: none
     database-platform: org.hibernate.dialect.PostgreSQLDialect
-    show-sql: true
   datasource:
     url: "jdbc:postgresql://localhost:15432/"
     username: postgres
