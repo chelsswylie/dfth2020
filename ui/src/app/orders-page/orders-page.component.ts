@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Orders, OrderService} from '../../../generated_src';
+import {Order, Orders, OrderService} from '../../../generated_src';
 
 @Component({
   selector: 'app-orders-page',
@@ -8,14 +8,14 @@ import {Orders, OrderService} from '../../../generated_src';
 })
 export class OrdersPageComponent implements OnInit {
 
-  orders: Orders;
+  orders: Order[] = [];
 
   constructor(private orderService: OrderService) {
   }
 
   ngOnInit(): void {
     this.orderService.getOrders().subscribe(orders => {
-      this.orders = orders;
+      this.orders = orders.orders;
     });
   }
 }
