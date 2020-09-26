@@ -70,7 +70,7 @@ components:
         orders:
           type: array
           items:
-            $ref: '#/components/schemas/OrderItem'
+            $ref: '#/components/schemas/Order'
     Order:
       type: object
       required:
