@@ -9,22 +9,24 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductionProcessComponent } from './production-process/production-process.component';
 import { OrdersPageComponent } from './orders-page/orders-page.component';
 import { OrderItemPageComponent } from './order-item-page/order-item-page.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductionProcessComponent,
     OrdersPageComponent,
-    OrderItemPageComponent
+    OrderItemPageComponent,
+    NavBarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatStepperModule,
-    MatExpansionModule
+    MatExpansionModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
