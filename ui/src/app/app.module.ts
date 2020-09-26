@@ -2,6 +2,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatListModule} from '@angular/material/list';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -30,6 +31,7 @@ import { OrderPageComponent } from './order-page/order-page.component';
     HttpClientModule,
     MatStepperModule,
     MatExpansionModule,
+    MatListModule,
   ],
   providers: [
     { provide: BASE_PATH, useValue: 'http://localhost:4200/api' }

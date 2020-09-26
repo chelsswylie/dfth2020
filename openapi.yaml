@@ -83,6 +83,26 @@ paths:
       tags:
         - Order Item
   /productionStep/{productionStepId}:
+    get:
+      operationId: getProductionStepId
+      parameters:
+        - in: path
+          name: productionStepId
+          schema:
+            type: string
+            format: uuid
+          required: true
+      responses:
+        '200':
+          description: Retrieve a specific production step from an order item.
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/ProductionStep'
+        '400':
+          description: The production step was not found.
+      tags:
+        - Prodution Step
     post:
       operationId: updateProductionStep
       parameters:
@@ -101,7 +121,7 @@ paths:
         '202':
           description: The production step was successfully updated.
         '404':
-          description: An order item is not found.
+          description: The production step was not successfully updated.
       tags:
         - Production Step
 components:

@@ -6,19 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./production-process.component.css'],
 })
 export class ProductionProcessComponent implements OnInit {
-  title = 'dfth2020-ui';
+  //title = 'dfth2020-ui';
 
   currentProductionStepsAndStatus = [
-    {
-      title: 'Marker Making and Cutting',
-      stepCode: 'firstStep',
-      status: 'Pending',
-    },
-    {
-      title: 'Production Preparation',
-      stepCode: 'secondStep',
-      status: 'Pending',
-    },
+    { title: 'Marker Making and Cutting', stepCode: 'firstStep', status: 'Pending' },
+    { title: 'Production Preparation', stepCode: 'secondStep', status: 'Pending' },
     { title: 'Front Panel', stepCode: 'thirdStep', status: 'Pending' },
     { title: 'Back Panel', stepCode: 'fourthStep', status: 'Pending' },
     { title: 'Marriage', stepCode: 'fifthStep', status: 'Pending' },
@@ -27,7 +19,7 @@ export class ProductionProcessComponent implements OnInit {
     { title: 'Quality Control', stepCode: 'eighthStep', status: 'Pending' },
     { title: 'Fulfillment', stepCode: 'ninthStep', status: 'Pending' },
   ];
-  isLinear = true;
+  isLinear = false;
 
   constructor() {}
 
