@@ -1,5 +1,4 @@
-<h3 style="padding-left: 10px; margin: 0">Your Order Items:</h3>
-
+<h1>Your Order Items</h1>
 <mat-nav-list>
   <a mat-list-item [routerLink]="['/order', order.id, 'item', orderItem.id]" *ngFor="let orderItem of order?.orderItems" [attr.id]="orderItem.id"> {{ order.id }} </a>
 </mat-nav-list>
