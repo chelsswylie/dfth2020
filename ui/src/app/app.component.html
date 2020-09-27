@@ -11,13 +11,13 @@
     <li><a [routerLink]="['/order']">My Orders</a></li>
   </ul>
 </div>
-<body>
-  <div class="heroimg">
-    <!-- <img id="logo" src="/assets/ddenimlogo.jpg" alt="logo" /> -->
-    <img id="hero-ish" src="/assets/Combined.png" alt="Hero Image" />
-  </div>
-</body>
-<router-outlet></router-outlet>
+<div class="heroimg">
+  <!-- <img id="logo" src="/assets/ddenimlogo.jpg" alt="logo" /> -->
+  <img id="hero-ish" src="/assets/Combined.png" alt="Hero Image" />
+</div>
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
 
 <!-- <body>
   <div class="heroimg">

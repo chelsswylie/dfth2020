@@ -75,6 +75,11 @@ body {
   background-size: contain;
 }
 
+.content {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
 /* #logo {
   max-width: 10%;
   height: auto;
@@ -100,7 +105,7 @@ body {
 /* Text styles */
 /* text-align: center;
 } */
-/* 
+/*
 .hero .btn { */
 /* Positioning and sizing */
 /* display: block;
@@ -138,7 +143,7 @@ body {
   float: left;
   width: 33%;
   height: 25%; */
-/* Possible change to auto 
+/* Possible change to auto
       for height to accommodate whatever is included in div  */
 /* margin: auto;
   margin-top: 25%;
@@ -157,14 +162,14 @@ body {
   float: left;
   width: 99%;
   height: 25%; */
-/* Possible change to auto 
+/* Possible change to auto
         for height to accommodate whatever is included in div  */
 /* margin-left: auto;
   border: 1px white solid;
   background-color: blueviolet;
 } */
 
-/* 
+/*
 img {
   margin: auto;
   display: block;
@@ -182,7 +187,7 @@ img {
   float: left;
   width: 33%;
   height: 25%; */
-/* Possible change to auto 
+/* Possible change to auto
       for height to accommodate whatever is included in div  */
 /* margin: auto;
   margin-top: 25%;
@@ -201,7 +206,7 @@ img {
   float: left;
   width: 99%;
   height: 25%; */
-/* Possible change to auto 
+/* Possible change to auto
         for height to accommodate whatever is included in div  */
 /* margin-left: auto;
   border: 1px white solid;
