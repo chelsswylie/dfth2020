@@ -15,6 +15,7 @@ import {OrderPageComponent} from './order-page/order-page.component';
 import {StatusToStringPipe} from './status-to-string.pipe';
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatButtonModule} from "@angular/material/button";
+import {MatCardModule} from "@angular/material/card";
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import {MatButtonModule} from "@angular/material/button";
     BrowserAnimationsModule,
     HttpClientModule,
     MatButtonModule,
+    MatCardModule,
     MatStepperModule,
     MatExpansionModule,
     MatListModule,
