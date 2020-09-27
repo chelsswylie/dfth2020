@@ -14,6 +14,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {BASE_PATH} from '../../generated_src';
 import { OrderPageComponent } from './order-page/order-page.component';
 import { HomeComponent } from './home/home.component';
+import { StatusToStringPipe } from './status-to-string.pipe';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { HomeComponent } from './home/home.component';
     NavBarComponent,
     OrderPageComponent,
     HomeComponent,
+    StatusToStringPipe,
   ],
   imports: [
     BrowserModule,
