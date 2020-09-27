@@ -13,6 +13,8 @@ import {HttpClientModule} from '@angular/common/http';
 import {BASE_PATH} from '../../generated_src';
 import {OrderPageComponent} from './order-page/order-page.component';
 import {StatusToStringPipe} from './status-to-string.pipe';
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -27,9 +29,11 @@ import {StatusToStringPipe} from './status-to-string.pipe';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatButtonModule,
     MatStepperModule,
     MatExpansionModule,
     MatListModule,
+    MatToolbarModule,
   ],
   providers: [
     { provide: BASE_PATH, useValue: 'http://localhost:4200/api' }

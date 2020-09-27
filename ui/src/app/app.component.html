@@ -1,15 +1,12 @@
-<div class="nav-section">
-  <ul class="nav-links">
-    <li>
-      <a href="https://detroitdenim.com/">
-        <img id="logo" src="/assets/ddenimlogo.jpg" alt="Detroit Denim Co." />
-        <h1>Manufacturing Experience</h1>
-      </a>
-    </li>
-    <li><a [routerLink]="['/']">Home</a></li>
-    <li><a [routerLink]="['/order']">My Orders</a></li>
-  </ul>
-</div>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-button>
+      <img id="logo" src="assets/ddenimlogo.jpg" alt="Detroit Denim Co."> Detroit Denim Co. Manufacturing Experience
+    </button>
+    <div class="flex-spacer"></div>
+    <button mat-button routerLink="order">My Orders</button>
+  </mat-toolbar-row>
+</mat-toolbar>
 <div id="hero-container">
   <div id="hero-ish"></div>
 </div>
