@@ -46,6 +46,7 @@ public class OrderGeneratorTest {
         assertThat(mmcStep.getDescription()).isEqualTo("Marker Making & Cutting");
         assertThat(mmcStep.getStatus()).isEqualTo(ProductionStepStatus.NOT_STARTED.toString());
         assertThat(mmcStep.getStepOrder()).isEqualTo(1);
+        assertThat(mmcStep.getMediaUrl()).isEqualTo("/assets/steps/6.png");
 
         ProductionStepEntity prepStep = productionStepEntities.get(1);
         assertThat(prepStep.getId().toString()).isInstanceOf(String.class);
@@ -55,6 +56,7 @@ public class OrderGeneratorTest {
         assertThat(prepStep.getDescription()).isEqualTo("Prep");
         assertThat(prepStep.getStatus()).isEqualTo(ProductionStepStatus.NOT_STARTED.toString());
         assertThat(prepStep.getStepOrder()).isEqualTo(2);
+        assertThat(prepStep.getMediaUrl()).isEqualTo("/assets/steps/7.png");
 
         ProductionStepEntity fpStep = productionStepEntities.get(2);
         assertThat(fpStep.getId().toString()).isInstanceOf(String.class);
@@ -64,6 +66,7 @@ public class OrderGeneratorTest {
         assertThat(fpStep.getDescription()).isEqualTo("Front Panel");
         assertThat(fpStep.getStatus()).isEqualTo(ProductionStepStatus.NOT_STARTED.toString());
         assertThat(fpStep.getStepOrder()).isEqualTo(3);
+        assertThat(fpStep.getMediaUrl()).isEqualTo("/assets/steps/8.png");
 
         ProductionStepEntity bpStep = productionStepEntities.get(3);
         assertThat(bpStep.getId().toString()).isInstanceOf(String.class);
@@ -73,6 +76,7 @@ public class OrderGeneratorTest {
         assertThat(bpStep.getDescription()).isEqualTo("Back Panel");
         assertThat(bpStep.getStatus()).isEqualTo(ProductionStepStatus.NOT_STARTED.toString());
         assertThat(bpStep.getStepOrder()).isEqualTo(4);
+        assertThat(bpStep.getMediaUrl()).isEqualTo("/assets/steps/9.png");
 
         ProductionStepEntity mStep = productionStepEntities.get(4);
         assertThat(mStep.getId().toString()).isInstanceOf(String.class);
@@ -82,6 +86,7 @@ public class OrderGeneratorTest {
         assertThat(mStep.getDescription()).isEqualTo("Marriage");
         assertThat(mStep.getStatus()).isEqualTo(ProductionStepStatus.NOT_STARTED.toString());
         assertThat(mStep.getStepOrder()).isEqualTo(5);
+        assertThat(mStep.getMediaUrl()).isEqualTo("/assets/steps/10.png");
 
         ProductionStepEntity waistStep = productionStepEntities.get(5);
         assertThat(waistStep.getId().toString()).isInstanceOf(String.class);
@@ -91,6 +96,7 @@ public class OrderGeneratorTest {
         assertThat(waistStep.getDescription()).isEqualTo("Waistband");
         assertThat(waistStep.getStatus()).isEqualTo(ProductionStepStatus.NOT_STARTED.toString());
         assertThat(waistStep.getStepOrder()).isEqualTo(6);
+        assertThat(waistStep.getMediaUrl()).isEqualTo("/assets/steps/11.png");
 
         ProductionStepEntity finishStep = productionStepEntities.get(6);
         assertThat(finishStep.getId().toString()).isInstanceOf(String.class);
@@ -100,6 +106,7 @@ public class OrderGeneratorTest {
         assertThat(finishStep.getDescription()).isEqualTo("Finishing");
         assertThat(finishStep.getStatus()).isEqualTo(ProductionStepStatus.NOT_STARTED.toString());
         assertThat(finishStep.getStepOrder()).isEqualTo(7);
+        assertThat(finishStep.getMediaUrl()).isEqualTo("/assets/steps/dfth2020pic4.png");
 
         ProductionStepEntity qcStep = productionStepEntities.get(7);
         assertThat(qcStep.getId().toString()).isInstanceOf(String.class);
@@ -109,6 +116,7 @@ public class OrderGeneratorTest {
         assertThat(qcStep.getDescription()).isEqualTo("Quality Control");
         assertThat(qcStep.getStatus()).isEqualTo(ProductionStepStatus.NOT_STARTED.toString());
         assertThat(qcStep.getStepOrder()).isEqualTo(8);
+        assertThat(qcStep.getMediaUrl()).isEqualTo("/assets/steps/pic5.png");
 
         ProductionStepEntity ffStep = productionStepEntities.get(8);
         assertThat(ffStep.getId().toString()).isInstanceOf(String.class);
@@ -118,6 +126,7 @@ public class OrderGeneratorTest {
         assertThat(ffStep.getDescription()).isEqualTo("Fulfillment");
         assertThat(ffStep.getStatus()).isEqualTo(ProductionStepStatus.NOT_STARTED.toString());
         assertThat(ffStep.getStepOrder()).isEqualTo(9);
+        assertThat(ffStep.getMediaUrl()).isNull();
     }
 
     @Test

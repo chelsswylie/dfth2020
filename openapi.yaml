@@ -187,15 +187,13 @@ components:
           type: string
         description:
           type: string
-        media:
-          type: array
-          items:
-            type: string
         status:
           $ref: '#/components/schemas/ProductionStepStatus'
         order:
           type: number
           format: int32
+        mediaUrl:
+          type: string
     ProductionStepStatus:
       type: string
       enum:

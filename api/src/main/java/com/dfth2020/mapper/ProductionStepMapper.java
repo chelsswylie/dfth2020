@@ -15,6 +15,7 @@ public class ProductionStepMapper {
         productionStep.setStepCode(productionStepEntity.getStepCode());
         productionStep.setOrder(new BigDecimal(productionStepEntity.getStepOrder()));
         productionStep.setStatus(ProductionStepStatus.fromValue(productionStepEntity.getStatus()));
+        productionStep.setMediaUrl(productionStepEntity.getMediaUrl());
 
         return productionStep;
     }

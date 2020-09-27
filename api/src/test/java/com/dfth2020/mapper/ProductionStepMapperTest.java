@@ -21,6 +21,7 @@ public class ProductionStepMapperTest {
         productionStepEntity.setOrderItemId(UUID.fromString("0c9a057b-9027-49b1-ba89-d62c5c86b468"));
         productionStepEntity.setStepCode("step-code");
         productionStepEntity.setStepOrder(1);
+        productionStepEntity.setMediaUrl("https://cdn.com/media.png");
 
         ProductionStep productionStep = ProductionStepMapper.mapProductionStep(productionStepEntity);
 
@@ -29,5 +30,6 @@ public class ProductionStepMapperTest {
         assertThat(productionStep.getDescription()).isEqualTo("description");
         assertThat(productionStep.getStatus()).isEqualTo(ProductionStepStatus.NOT_STARTED);
         assertThat(productionStep.getOrder()).isEqualTo("1");
+        assertThat(productionStep.getMediaUrl()).isEqualTo("https://cdn.com/media.png");
     }
 }

@@ -13,9 +13,9 @@ import {HttpClientModule} from '@angular/common/http';
 import {BASE_PATH} from '../../generated_src';
 import {OrderPageComponent} from './order-page/order-page.component';
 import {StatusToStringPipe} from './status-to-string.pipe';
-import {MatToolbarModule} from "@angular/material/toolbar";
-import {MatButtonModule} from "@angular/material/button";
-import {MatCardModule} from "@angular/material/card";
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [

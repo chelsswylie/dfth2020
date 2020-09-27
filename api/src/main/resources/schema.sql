@@ -20,14 +20,7 @@ CREATE TABLE IF NOT EXISTS production_step (
     description TEXT NOT NULL,
     status VARCHAR(20) NOT NULL,
     step_order INTEGER NOT NULL,
+    media_url VARCHAR(2500),
     PRIMARY KEY (id),
     FOREIGN KEY (order_item_id) REFERENCES order_item(id)
-);
-
-CREATE TABLE IF NOT EXISTS mediaEntity (
-    id UUID DEFAULT uuid_generate_v4() NOT NULL,
-    production_step_id UUID NOT NULL,
-    media_url VARCHAR(2500) NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (production_step_id) REFERENCES production_step(id)
 );

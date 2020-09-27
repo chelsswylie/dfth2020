@@ -14,41 +14,41 @@ INSERT INTO customer_order(id) VALUES ('ddfc229c-3c4f-4c5f-a59f-d7a1d8da8675');
 
 INSERT INTO order_item(id, order_id) VALUES ('41b73992-3eac-4583-b11e-1a8b1fcad370', 'ddfc229c-3c4f-4c5f-a59f-d7a1d8da8675');
 
-INSERT INTO production_step(id, order_item_id, step_code, title, description, status, step_order)
+INSERT INTO production_step(id, order_item_id, step_code, title, description, status, step_order, media_url)
 VALUES ('a3eb1cf9-1dad-461f-8146-24792d677350', '41b73992-3eac-4583-b11e-1a8b1fcad370', 'mmc', 'Marker Making & Cutting',
-'Marker Making & Cutting', 'not_started', 1);
+'Marker Making & Cutting', 'not_started', 1, '/assets/steps/6.png');
 
-INSERT INTO production_step(id, order_item_id, step_code, title, description, status, step_order)
+INSERT INTO production_step(id, order_item_id, step_code, title, description, status, step_order, media_url)
 VALUES ('0fae474b-8ce3-4d41-97d2-ceeb6fbdee2c', '41b73992-3eac-4583-b11e-1a8b1fcad370', 'prep', 'Prep',
-'Prep', 'not_started', 2);
+'Prep', 'not_started', 2, '/assets/steps/7.png');
 
-INSERT INTO production_step(id, order_item_id, step_code, title, description, status, step_order)
+INSERT INTO production_step(id, order_item_id, step_code, title, description, status, step_order, media_url)
 VALUES ('06f46dfe-097b-4fe7-b8e1-5dee6f02ea98', '41b73992-3eac-4583-b11e-1a8b1fcad370', 'fp', 'Front Panel',
- 'Front Panel', 'not_started', 3);
+ 'Front Panel', 'not_started', 3, '/assets/steps/8.png');
 
-INSERT INTO production_step(id, order_item_id, step_code, title, description, status, step_order)
+INSERT INTO production_step(id, order_item_id, step_code, title, description, status, step_order, media_url)
 VALUES ('befec777-9896-452e-8dc9-ad38431563e1', '41b73992-3eac-4583-b11e-1a8b1fcad370', 'bp', 'Back Panel',
- 'Back Panel', 'not_started', 4);
+ 'Back Panel', 'not_started', 4, '/assets/steps/9.png');
 
-INSERT INTO production_step(id, order_item_id, step_code, title, description, status, step_order)
+INSERT INTO production_step(id, order_item_id, step_code, title, description, status, step_order, media_url)
 VALUES ('a59cb401-d8b4-4feb-871b-09f1abd168c1', '41b73992-3eac-4583-b11e-1a8b1fcad370', 'm', 'Marriage',
- 'Marriage', 'not_started', 5);
+ 'Marriage', 'not_started', 5, '/assets/steps/10.png');
 
-INSERT INTO production_step(id, order_item_id, step_code, title, description, status, step_order)
+INSERT INTO production_step(id, order_item_id, step_code, title, description, status, step_order, media_url)
 VALUES ('9d150281-4005-45d0-b92d-40b5956e8544', '41b73992-3eac-4583-b11e-1a8b1fcad370', 'waist', 'Waistband',
-'Waistband', 'not_started', 6);
+'Waistband', 'not_started', 6, '/assets/steps/11.png');
 
-INSERT INTO production_step(id, order_item_id, step_code, title, description, status, step_order)
+INSERT INTO production_step(id, order_item_id, step_code, title, description, status, step_order, media_url)
 VALUES ('3500711f-976e-4d6c-bf2e-20592107db50', '41b73992-3eac-4583-b11e-1a8b1fcad370', 'finish', 'Finishing',
-'Finishing', 'not_started', 7);
+'Finishing', 'not_started', 7, '/assets/steps/dfth2020pic4.png');
 
-INSERT INTO production_step(id, order_item_id, step_code, title, description, status, step_order)
+INSERT INTO production_step(id, order_item_id, step_code, title, description, status, step_order, media_url)
 VALUES ('f18d76de-a296-4e8b-b820-ce58d89fde4f', '41b73992-3eac-4583-b11e-1a8b1fcad370', 'qc', 'Quality Control',
-'Quality Control', 'not_started', 8);
+'Quality Control', 'not_started', 8, '/assets/steps/pic5.png');
 
-INSERT INTO production_step(id, order_item_id, step_code, title, description, status, step_order)
+INSERT INTO production_step(id, order_item_id, step_code, title, description, status, step_order, media_url)
 VALUES ('07ff4e60-75af-4e03-bbf9-07748a9814cb', '41b73992-3eac-4583-b11e-1a8b1fcad370', 'ff', 'Fulfillment',
-'Fulfillment', 'not_started', 9);
+'Fulfillment', 'not_started', 9, NULL);
 
 DELETE FROM production_step WHERE id = 'cf5753a0-f15d-41fc-86ff-209753af65f7';
 DELETE FROM production_step WHERE id = '85892daa-d8a0-409f-9d69-15fe77351834';
