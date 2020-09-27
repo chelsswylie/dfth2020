@@ -1,9 +1,4 @@
 <h3 style="padding-left: 10px; margin: 0;">Your Orders:</h3>
-<!--<ul>-->
-<!--  <li *ngFor="let order of orders.orders">-->
-<!--    <a [routerLink]="['/order', order.id]">{{order.id}}</a>-->
-<!--  </li>-->
-<!--</ul>-->
 <mat-nav-list>
   <a mat-list-item [routerLink]="['/order', order.id]" *ngFor="let order of orders"> {{ order.id }} </a>
 </mat-nav-list>
