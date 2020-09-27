@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { OrderItemPageComponent } from './order-item-page.component';
+import {OrderItemPageComponent} from './order-item-page.component';
 
 describe('OrderItemPageComponent', () => {
   let component: OrderItemPageComponent;

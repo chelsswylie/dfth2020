@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import {Pipe, PipeTransform} from '@angular/core';
 import {ProductionStepStatus} from '../../generated_src';
 
 @Pipe({
@@ -13,5 +13,4 @@ export class StatusToStringPipe implements PipeTransform {
       [ProductionStepStatus.Complete]: 'Complete' as ProductionStepStatus
     }[value];
   }
-
 }

@@ -1,10 +1,9 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { Routes, RouterModule, ExtraOptions } from '@angular/router';
-import { OrderItemPageComponent } from './order-item-page/order-item-page.component';
-import { OrdersPageComponent } from './orders-page/orders-page.component';
-import { OrderPageComponent } from './order-page/order-page.component';
-import { HomeComponent } from './home/home.component';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {ExtraOptions, RouterModule, Routes} from '@angular/router';
+import {OrderItemPageComponent} from './order-item-page/order-item-page.component';
+import {OrdersPageComponent} from './orders-page/orders-page.component';
+import {OrderPageComponent} from './order-page/order-page.component';
 
 const routerOptions: ExtraOptions = {
   scrollPositionRestoration: 'enabled',
@@ -13,13 +12,10 @@ const routerOptions: ExtraOptions = {
 };
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', redirectTo: 'order' },
   { path: 'order', component: OrdersPageComponent },
   { path: 'order/:orderId', component: OrderPageComponent },
-  {
-    path: 'order/:orderId/item/:orderItemId',
-    component: OrderItemPageComponent,
-  },
+  { path: 'order/:orderId/item/:orderItemId', component: OrderItemPageComponent },
 ];
 
 @NgModule({

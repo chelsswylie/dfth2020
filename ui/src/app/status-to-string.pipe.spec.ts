@@ -1,4 +1,4 @@
-import { StatusToStringPipe } from './status-to-string.pipe';
+import {StatusToStringPipe} from './status-to-string.pipe';
 
 describe('StatusToStringPipe', () => {
   it('create an instance', () => {

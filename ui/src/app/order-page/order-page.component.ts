@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {Order, OrderItem, OrderService} from '../../../generated_src';
+import {Order, OrderService} from '../../../generated_src';
 import {switchMap} from 'rxjs/operators';
-import {ActivatedRoute, Route} from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-order-page',
