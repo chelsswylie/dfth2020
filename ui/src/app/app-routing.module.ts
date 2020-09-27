@@ -12,7 +12,7 @@ const routerOptions: ExtraOptions = {
 };
 
 const routes: Routes = [
-  { path: '', redirectTo: 'order' },
+  { path: '', redirectTo: 'order', pathMatch: 'full' },
   { path: 'order', component: OrdersPageComponent },
   { path: 'order/:orderId', component: OrderPageComponent },
   { path: 'order/:orderId/item/:orderItemId', component: OrderItemPageComponent },

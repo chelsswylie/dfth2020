@@ -6,5 +6,5 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'dfth2020-ui';
+  title = 'Detroit Denim Co. Manufacturing Experience';
 }
