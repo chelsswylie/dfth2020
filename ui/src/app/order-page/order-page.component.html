@@ -1,4 +1,4 @@
-<h3 style="padding-left: 10px; margin: 0">Your Order:</h3>
+<h3 style="padding-left: 10px; margin: 0">Your Order Items:</h3>
 
 <div id="backgroundImage">
   <img id="hero-ish" src="/assets/Combined.png" alt="logo" />
@@ -12,15 +12,6 @@
 </ul>
 <pre>{{order | json}}</pre>-->
 
-<div id="outerBox">
-  <mat-nav-list>
-    <a
-      mat-list-item
-      [routerLink]="['/order', order.id, 'item', orderItem.id]"
-      *ngFor="let orderItem of order.orderItems"
-      [attr.id]="orderItem.id"
-    >
-      {{ orderItem.id }}
-    </a>
-  </mat-nav-list>
-</div>
+<mat-nav-list>
+  <a mat-list-item [routerLink]="['/order', order.id, 'item', orderItem.id]" *ngFor="let orderItem of orderItems" [attr.id]="orderItem.id"> {{ order.id }} </a>
+</mat-nav-list>

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Order, OrderService} from '../../../generated_src';
+import {Order, OrderItem, OrderService} from '../../../generated_src';
 import {switchMap} from 'rxjs/operators';
 import {ActivatedRoute, Route} from '@angular/router';
 
@@ -14,9 +14,15 @@ export class OrderPageComponent implements OnInit {
 
   order: Order;
 
+  orderItems: OrderItem[] = [];
+
   ngOnInit(): void {
     this.route.params.pipe(
       switchMap(params => this.orderService.getOrder(params.orderId))
-    ).subscribe(order => this.order = order);
+    ).subscribe(order => {
+      this.order = order;
+      this.orderItems = order.orderItems;
+      console.log(this.orderItems);
+    });
   }
 }
