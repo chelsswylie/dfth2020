@@ -1,2 +1,15 @@
-<p>There are no items set up yet</p>
-<pre>{{orderItem | json}}</pre>
+<div class="loopy">
+  <mat-vertical-stepper [linear]="false">
+    <div *ngFor=" let currentProductionStepsAndStatus of orderItem.productionSteps">
+      <mat-step [completed]="false">
+        <ng-template matStepLabel>
+          {{ currentProductionStepsAndStatus.title }}
+        </ng-template>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>Current status</mat-expansion-panel-header>
+          {{ currentProductionStepsAndStatus.status }}
+        </mat-expansion-panel>
+      </mat-step>
+    </div>
+  </mat-vertical-stepper>
+</div>

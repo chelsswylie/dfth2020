@@ -14,15 +14,11 @@ export class OrderPageComponent implements OnInit {
 
   order: Order;
 
-  orderItems: OrderItem[] = [];
-
   ngOnInit(): void {
     this.route.params.pipe(
       switchMap(params => this.orderService.getOrder(params.orderId))
     ).subscribe(order => {
       this.order = order;
-      this.orderItems = order.orderItems;
-      console.log(this.orderItems);
     });
   }
 }

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule, ExtraOptions } from '@angular/router';
-import { ProductionProcessComponent } from './production-process/production-process.component';
 import { OrderItemPageComponent } from './order-item-page/order-item-page.component';
 import { OrdersPageComponent } from './orders-page/orders-page.component';
 import { OrderPageComponent } from './order-page/order-page.component';
@@ -21,7 +20,6 @@ const routes: Routes = [
     path: 'order/:orderId/item/:orderItemId',
     component: OrderItemPageComponent,
   },
-  { path: 'production-process', component: ProductionProcessComponent },
 ];
 
 @NgModule({
