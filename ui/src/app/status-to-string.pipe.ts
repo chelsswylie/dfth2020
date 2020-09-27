@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import {ProductionStepStatus} from "../../generated_src";
+import {ProductionStepStatus} from '../../generated_src';
 
 @Pipe({
   name: 'statusToString'
