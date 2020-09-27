@@ -1,11 +1,11 @@
 <div class="loopy">
   <mat-vertical-stepper [linear]="false">
-    <div *ngFor=" let currentProductionStepsAndStatus of orderItem.productionSteps">
+    <div *ngFor=" let currentProductionStepsAndStatus of orderItem?.productionSteps">
       <mat-step [completed]="false">
         <ng-template matStepLabel>
           {{ currentProductionStepsAndStatus.title }}
         </ng-template>
-        <mat-expansion-panel>
+        <mat-expansion-panel [expanded]="true" [disabled]="true">
           <mat-expansion-panel-header>Current status</mat-expansion-panel-header>
           {{ currentProductionStepsAndStatus.status }}
         </mat-expansion-panel>
